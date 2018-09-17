@@ -1,0 +1,36 @@
+terraform plan -var-file=poc.tfvars -out=create.tfplan -detailed-exitcode
++ tee -a terraform.log
+
+Terraform will perform the following actions:
+
+module.emr_demo.aws_emr_cluster.cluster
+      id:                                                 <computed>
+      applications.#:                                     "5"
+      applications.1557323817:                            "Spark"
+      applications.2086606022:                            "Hive"
+      applications.3652851695:                            "Zeppelin"
+      applications.3879526366:                            "Livy"
+      applications.4065266680:                            "Presto"
+      bootstrap_action.#:                                 "4"
+      bootstrap_action.3799352251.args.#:                 "3"
+      bootstrap_action.3799352251.args.0:                 "s3://demo-test/cloudwatch/sample.sh"
+      ec2_attributes.0.key_name:                          "******"
+      ec2_attributes.0.service_access_security_group:     "sg-1234"
+      ec2_attributes.0.subnet_id:                         "subnet-123"
+      instance_group.#:                                   "2"
+      instance_group.3592345169.autoscaling_policy:       ""
+      instance_group.3592345169.bid_price:                ""
+      instance_group.3592345169.ebs_config.#:             "0"
+      instance_group.3592345169.instance_count:           "2"
+      instance_group.3592345169.instance_role:            "CORE"
+      instance_group.3592345169.instance_type:            "r4.xlarge"
+      instance_group.3592345169.name:                     ""
+      instance_group.515111956.autoscaling_policy:        ""
+      instance_group.515111956.bid_price:                 ""
+      instance_group.515111956.ebs_config.#:              "0"
+      instance_group.515111956.instance_count:            "1"
+      instance_group.515111956.instance_role:             "MASTER"
+      instance_group.515111956.instance_type:             "r4.xlarge"
+	  release_label:                                      "emr-5.12.0"
+	  
+	  Plan:7 to add, 1 to change, 1 to destroy
